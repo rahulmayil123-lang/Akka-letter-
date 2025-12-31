@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For My Sister ❤️</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+    url("bg.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+/* Password screen */
+#lockScreen {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(6px);
+  text-align: center;
+}
+
+input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 25px;
+  border: none;
+  background: #fff;
+  color: #ff5f7e;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#error {
+  margin-top: 10px;
+  color: #ffecec;
+}
+
+/* Letter screen */
+#letterScreen {
+  display: none;
+  padding: 25px;
+}
+
+.letter {
+  background: rgba(0,0,0,0.45);
+  padding: 25px;
+  border-radius: 20px;
+  line-height: 1.8;
+  white-space: pre-line;
+}
+
+.footer-text {
+  margin-top: 25px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🔊 Background Audio (mute autoplay) -->
+<audio id="bgAudio" autoplay muted loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- PASSWORD PAGE -->
+<div id="lockScreen">
+  <h2>🔐 Enter Password</h2>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Open 💖</button>
+  <p id="error"></p>
+</div>
+
+<!-- LETTER PAGE -->
+<div id="letterScreen">
+  <div class="letter">
+Dear sister ❣️  
+Happy new year 😻💞  
+
+Intha varusam unga dream yellam neraverum,  
+naa athukaga enaala mudinja help panuvan 😊😌  
+
+Ungala rombaa pudikkum kaa,  
+aana antha anba yepadi velikkattanum nu theriyathu.  
+Aparam ungalta neraiya pesanum nu nenaippan,  
+aana pesa maaten… yean nu therla 😁🙃  
+
+Yenaku therinju past year la thaan  
+namma neraiya pesikitom,  
+aana inom neraiya time spent pannanum,  
+neraiya pesikanum nu aasai.  
+
+Aparam Thiruvarur ponum,  
+maybe intha year layachum possible ah nu paakalam.  
+Next vella hotel la poi saapudanum,  
+ipdi neraiyaa bucket list 😁💝 irukku.  
+
+Aparam onnu kaa,  
+naa adikadi soldrathu thaan –  
+nalla saapudunga, thoongunga,  
+health ah paathukonga.  
+
+Yen naa yellorum ellaa time layum  
+namma paathuka mudiyathu,  
+namma thavira… athaan seriya 🫂❤️‍🩹  
+
+Yepothum pola thaan  
+neenga enaikum kan kalanga kudathu kaa 🥺  
+athu ku naanga vida maatom.  
+Apdi feel aana,  
+konjam yosichu paarunga —  
+**we are there.**  
+
+Your brother 🥰🙂‍↕️  
+And brotherssaa 😶‍🌫️🫂❤️‍🩹
+  </div>
+
+  <div class="footer-text">
+    Thanks for everything and coming into my life akka 🫂❤️‍🩹
+  </div>
+</div>
+
+<script>
+function checkPassword() {
+  const pass = document.getElementById("password").value;
+  const correctPassword = "akka"; // CHANGE PASSWORD HERE
+
+  if (pass === correctPassword) {
+    document.getElementById("lockScreen").style.display = "none";
+    document.getElementById("letterScreen").style.display = "block";
+
+    // unmute audio after password
+    const audio = document.getElementById("bgAudio");
+    audio.muted = false;
+    audio.play();
+  } else {
+    document.getElementById("error").innerText = "Wrong password 😅";
+  }
+}
+</script>
+
+</body>
+</html>
